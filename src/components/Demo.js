@@ -22,7 +22,7 @@ const Demo = () => {
     comments: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false); // To show loading state
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -76,7 +76,6 @@ const Demo = () => {
         comments: formData.comments,
       };
 
-      // Debugging log
       console.log("Sending email with these params:", templateParams);
 
       const response = await emailjs.send(
