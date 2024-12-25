@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const PricingCalculator = () => {
-  const [skuCount, setSkuCount] = useState(3); // Default SKU count
+  const [skuCount, setSkuCount] = useState(3); 
   const basePrice = 49.99;
   const additionalPricePerSku = 14.99;
 
@@ -18,14 +18,11 @@ const PricingCalculator = () => {
 
   return (
     <div className="flex flex-col items-center bg-gray-200 p-6 sm:p-8 md:p-10 rounded-sm shadow-sm w-full sm:w-3/4 md:w-1/2 mx-auto">
-      {/* Title */}
       <h1 className="text-gray-800 text-lg sm:text-xl md:text-2xl font-bold mb-6 text-center">
         Pricing based on SKU count
       </h1>
 
-      {/* Row: SKU Button and Price */}
       <div className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-full px-6 py-4 w-full mb-4">
-        {/* SKU Selector */}
         <div className="flex items-center mb-4 sm:mb-0">
           <button
             className="bg-blue-500 text-white text-sm sm:text-base font-semibold px-4 py-2 rounded-full focus:outline-none"

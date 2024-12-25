@@ -4,7 +4,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Demo = () => {
-  // State to hold form data
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -25,7 +24,6 @@ const Demo = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false); // To show loading state
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox" && name === "painPoints") {
@@ -42,7 +40,6 @@ const Demo = () => {
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -75,7 +72,7 @@ const Demo = () => {
         budget: formData.budget,
         agency: formData.agency ? "Yes" : "No",
         agencyServices: formData.agencyServices,
-        painPoints: formData.painPoints.join(", "), // Join pain points array into a comma-separated string
+        painPoints: formData.painPoints.join(", "), 
         comments: formData.comments,
       };
 
@@ -94,7 +91,6 @@ const Demo = () => {
       if (response.status === 200) {
         setIsSubmitting(false);
         toast.success('Form submitted successfully!');
-        // Reset form after successful submission
         setFormData({
           fullName: "",
           email: "",
@@ -128,7 +124,6 @@ const Demo = () => {
         Request a Demo
       </h2>
 
-      {/* Toast Container for pop-up notifications */}
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -281,7 +276,6 @@ const Demo = () => {
           </div>
         </div>
 
-        {/* Comments */}
         <div>
           <label htmlFor="comments" className="block text-sm font-medium text-gray-700">Additional Comments</label>
           <textarea
@@ -294,7 +288,6 @@ const Demo = () => {
           ></textarea>
         </div>
 
-        {/* Submit Button */}
         <div className="text-center">
           <button
             type="submit"
